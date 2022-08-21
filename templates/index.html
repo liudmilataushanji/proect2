@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Главная страница!</title>
+</head>
+<body>
+Угадай жанр песни по тексту!
+<form method="post">
+    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+    <input type="submit">
+    {% if request.args.get("pred") %}
+    <h1>{{request.args.get("pred")}}</h1>
+    {% endif %}
+</form>
+</body>
+</html>
